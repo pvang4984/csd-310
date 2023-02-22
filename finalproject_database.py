@@ -31,7 +31,7 @@ for row in result:
 query = "SELECT * from customerorder"
 mycursor.execute(query)
 result = mycursor.fetchall()
-print("--DISPLAYING EMPLOYEE RECORDS--")
+print("--DISPLAYING CUSTOMER ORDERS--")
 for row in result:
     print("Customer Order ID:", row[0])
     print("Customer ID:", row[1])
@@ -86,6 +86,55 @@ for row in result:
     print("Product Name:", row[1])
     print("Price:", row[3])
     print("Quantity on hand:", row[4])
+    print(" ")
+
+#display supplier
+query = "SELECT * from supplier"
+mycursor.execute(query)
+result = mycursor.fetchall()
+print("--DISPLAYING SUPPLIERS--")
+for row in result:
+    print("Supplier ID:", row[0])
+    print("Supplier Name:", row[1])
+    print(" ")
+
+#display supplies
+query = "SELECT * from supplies"
+mycursor.execute(query)
+result = mycursor.fetchall()
+print("--DISPLAYING SUPPLIES--")
+for row in result:
+    print("Supply ID:", row[0])
+    print("Item:", row[1])
+    print("Quantity on hand:", row[2])
+    print("Supplier ID:", row[3])
+    print(" ")
+
+
+#display supply order
+query = "SELECT * from supplyorder"
+mycursor.execute(query)
+result = mycursor.fetchall()
+print("--DISPLAYING SUPPLY ORDERS--")
+for row in result:
+    print("Supply Order ID:", row[0])
+    print("Supplier ID:", row[1])
+    print("Supply ID:", row[2])
+    print("Employee ID:", row[4])
+    print("QTY ordered:", row[4])
+    print("Date Placed:", row[5])
+    print("Cost per item:", row[6])
+    print(" ")
+
+#display supply shipment
+query = "SELECT * from supplyshipment"
+mycursor.execute(query)
+result = mycursor.fetchall()
+print("--DISPLAYING SUPPLY SHIPMENTS--")
+for row in result:
+    print("Supply Shipment ID:", row[0])
+    print("Supply Order ID:", row[1])
+    print("Date shipped:", row[2])
     print(" ")
 
 
